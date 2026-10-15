@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_BASE_URL = "http://localhost:5000/api/cart";
+const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com/api/cart";
 
 // Extract the full cart item list from supported API response formats.
 const getCartItems = (data) => {

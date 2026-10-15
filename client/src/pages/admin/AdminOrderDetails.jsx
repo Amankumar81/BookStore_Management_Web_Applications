@@ -14,7 +14,7 @@ import {
 } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 
 const OrderConnector = styled(StepConnector)(({ theme }) => ({
   "& .MuiStepConnector-line": {

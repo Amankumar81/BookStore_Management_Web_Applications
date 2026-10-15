@@ -48,7 +48,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://bookstore-management-web-applications.onrender.com/api";
 
 const initialForm = {
   code: "",

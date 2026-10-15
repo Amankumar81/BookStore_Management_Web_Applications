@@ -31,7 +31,7 @@ import { addToCart } from "../store/slices/cartSlice";
 import useRequireLogin from "../hooks/useRequireLogin";
 import usePendingAction from "../hooks/usePendingAction";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
 
 const WIDE = {
   maxWidth: 1600,

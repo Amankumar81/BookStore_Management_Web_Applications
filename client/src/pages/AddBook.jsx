@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 
 function AddBook() {
   const navigate = useNavigate();

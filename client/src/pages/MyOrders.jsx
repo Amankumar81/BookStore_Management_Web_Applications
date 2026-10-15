@@ -182,7 +182,7 @@ function MyOrders() {
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/orders/my-orders",
+          "https://bookstore-management-web-applications.onrender.com/api/orders/my-orders",
           {
             method: "GET",
             headers: {

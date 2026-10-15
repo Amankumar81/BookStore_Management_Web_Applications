@@ -34,7 +34,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 const LOW_STOCK_LIMIT = 5;
 const BOOKS_PER_PAGE = 10;
 

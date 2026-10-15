@@ -51,7 +51,7 @@ import {
 
 import { toast } from "react-toastify";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 
 const INITIAL_PAGINATION = {
   currentPage: 1,

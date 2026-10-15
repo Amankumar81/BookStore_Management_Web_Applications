@@ -21,7 +21,7 @@ import DoneAllIcon from "@mui/icons-material/DoneAll";
 import CircleIcon from "@mui/icons-material/Circle";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 const MAX_VISIBLE_NOTIFICATIONS = 20;
 
 const getResponseData = async (response) => {

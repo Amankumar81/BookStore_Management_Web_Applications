@@ -31,7 +31,7 @@ import {
 
 import { getBookById } from "../api/bookApi";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
 
 // ============================================================
 // Helpers

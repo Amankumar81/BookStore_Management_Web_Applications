@@ -35,7 +35,7 @@ import PaymentIcon from "@mui/icons-material/Payment";
 
 import { Html5Qrcode } from "html5-qrcode";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 
 const QRScanner = () => {
   const navigate = useNavigate();

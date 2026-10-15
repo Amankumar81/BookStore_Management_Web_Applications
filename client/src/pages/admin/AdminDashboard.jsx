@@ -33,7 +33,7 @@ import OrderStatusChart from "../../components/admin/OrderStatusChart";
 import FinancialSummaryChart from "../../components/admin/FinancialSummaryChart";
 import AdminNotificationBell from "../../components/admin/AdminNotificationBell";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 const LOW_STOCK_LIMIT = 5;
 
 // ==========================================

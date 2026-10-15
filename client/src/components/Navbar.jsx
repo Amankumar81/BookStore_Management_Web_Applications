@@ -113,7 +113,7 @@ function Navbar() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/wishlist",
+          "https://bookstore-management-web-applications.onrender.com/api/wishlist",
           {
             method: "GET",
             headers: {
@@ -176,7 +176,7 @@ function Navbar() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/notifications/unread-count",
+          "https://bookstore-management-web-applications.onrender.com/api/notifications/unread-count",
           {
             method: "GET",
             headers: {

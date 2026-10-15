@@ -40,7 +40,7 @@ import {
   LocalOfferOutlined,
 } from "@mui/icons-material";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 
 const STATUS_STEPS = ["Pending", "Processing", "Shipped", "Delivered"];
 

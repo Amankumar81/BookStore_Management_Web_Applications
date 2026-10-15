@@ -14,7 +14,7 @@ import {
   Tooltip,
 } from "@mui/material";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bookstore-management-web-applications.onrender.com";
 
 const MONTHS = [
   "January", "February", "March", "April",

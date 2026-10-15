@@ -16,8 +16,7 @@ import Account from "./pages/Account";
 import Notifications from "./pages/Notifications";
 import Returns from "./pages/Returns";
 import HelpSupport from "./pages/HelpSupport";
-import PrivacyTerms from "./pages/PrivacyTerms";
-
+import PrivacyTerms from "./pages/PrivacyTerms.jsx";
 // Account section pages
 import PersonalDetails from "./pages/PersonalDetails";
 import SavedAddresses from "./pages/SaveAddress";

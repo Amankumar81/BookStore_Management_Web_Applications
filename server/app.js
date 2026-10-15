@@ -39,6 +39,14 @@ app.use(limiter);
 const authRoutes = require("./routes/auth.routes");
 app.use("/api/auth", authRoutes);
 
+app.use((err, req, res, next) => {
+  const status = res.statusCode && res.statusCode !== 200 ? res.statusCode : 500;
+  res.status(status).json({
+    success: false,
+    message: err.message,
+  });
+});
+
 const forgotPasswordRoutes = require("./routes/forgotPassword.routes");
 app.use("/api/auth", forgotPasswordRoutes);
 
@@ -93,9 +101,9 @@ const helpRoutes = require("./routes/help.routes");
 app.use("/api/help", helpRoutes);
 
 // Test route
-app.get("/", (req, res) => {
-  res.send("BookStore API is Running...");
-});
+// app.get("/", (req, res) => {
+//   res.send("BookStore API is Running...");
+// });
 
 
 module.exports = app;

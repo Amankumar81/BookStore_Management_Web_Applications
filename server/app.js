@@ -40,7 +40,7 @@ const authRoutes = require("./routes/auth.routes");
 app.use("/api/auth", authRoutes);
 
 app.use((err, req, res, next) => {
-  const status = res.statusCode && res.statusCode !== 200 ? res.statusCode : 500;
+  const status = err.statusCode || err.status || 500;
   res.status(status).json({
     success: false,
     message: err.message,

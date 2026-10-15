@@ -8,12 +8,14 @@ const registerSchema = Joi.object({
     .required(),
 
   email: Joi.string()
+    .trim()
     .email()
     .required(),
 
   phone: Joi.string()
     .trim()
-    .required(),
+    .allow("")
+    .optional(),
 
   password: Joi.string()
     .min(6)
@@ -23,6 +25,7 @@ const registerSchema = Joi.object({
 
 const loginSchema = Joi.object({
   email: Joi.string()
+    .trim()
     .email()
     .required(),
 

@@ -11,7 +11,8 @@ const options = {
 
     servers: [
       {
-        url: "http://localhost:5000",
+        url: process.env.BASE_URL || "http://localhost:5000",
+        description: process.env.BASE_URL ? "Production server" : "Local server",
       },
     ],
 

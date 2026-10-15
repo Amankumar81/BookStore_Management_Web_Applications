@@ -33,7 +33,7 @@ const sendVerificationEmail = async (req, res) => {
     await user.save();
 
     const verificationURL =
-      `http://localhost:5000/api/auth/verify-email/${verificationToken}`;
+      `${process.env.BASE_URL}/api/auth/verify-email/${verificationToken}`;
 
     const message = `
 Hello ${user.name},
@@ -47,11 +47,12 @@ This link will expire in 24 hours.
 BookStore Team
 `;
 
-  await sendEmail({
-  email: user.email,
-  subject: "Verify Your BookStore Account",
-  message,
-});
+    await sendEmail({
+      email: user.email,
+      subject: "Verify Your BookStore Account",
+      message,
+    });
+
     res.status(200).json({
       success: true,
       message: "Verification email sent successfully",
@@ -132,7 +133,7 @@ const resendVerificationEmail = async (req, res) => {
     await user.save();
 
     const verificationURL =
-      `http://localhost:5000/api/auth/verify-email/${verificationToken}`;
+      `${process.env.BASE_URL}/api/auth/verify-email/${verificationToken}`;
 
     const message = `
 Hello ${user.name},
@@ -146,11 +147,11 @@ This link will expire in 24 hours.
 BookStore Team
 `;
 
-    await sendEmail(
-      user.email,
-      "Verify Your BookStore Account",
-      message
-    );
+    await sendEmail({
+      email: user.email,
+      subject: "Verify Your BookStore Account",
+      message,
+    });
 
     res.status(200).json({
       success: true,

@@ -266,7 +266,7 @@ function Account() {
             </Box>
             <Button
               component={Link}
-              to="/admin/dashboard"
+              to="/admin"
               variant="contained"
               sx={{
                 bgcolor: "#2563eb",

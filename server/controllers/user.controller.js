@@ -87,7 +87,9 @@ const getAllCustomers = async (req, res) => {
    console.log("### getAllCustomers v2 ###", req.query.search);
    console.log("FILTER:", JSON.stringify(filter));
     const customers = await User.find(filter)
-     .select("-password -resetPasswordToken ...")
+     .select(
+  "-password -resetPasswordToken -resetPasswordExpires -emailVerificationToken -emailVerificationExpires"
+)
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limitNumber)
@@ -212,7 +214,9 @@ const getCustomerById = async (req, res) => {
       _id: id,
       role: "customer",
     })
-      .select("-password -resetPasswordToken ...")
+      .select(
+  "-password -resetPasswordToken -resetPasswordExpires -emailVerificationToken -emailVerificationExpires"
+)
       .lean();
 
     if (!customer) {

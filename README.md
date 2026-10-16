@@ -299,7 +299,6 @@ bookstore_management_system/
 │   │   ├── return.controller.js
 │   │   ├── review.controller.js
 │   │   ├── user.controller.js
-│   │   ├── verification.controller.js
 │   │   └── wishlist.controller.js
 │   ├── docs/
 │   │   └── swagger.js
@@ -336,7 +335,6 @@ bookstore_management_system/
 │   │   ├── return.routes.js
 │   │   ├── review.routes.js
 │   │   ├── user.routes.js
-│   │   ├── verification.routes.js
 │   │   └── wishlist.routes.js
 │   ├── services/
 │   │   ├── auth.service.js
@@ -442,7 +440,6 @@ bookstore_management_system/
 |---|---|
 | `/api/auth` | Registration, login, and authentication |
 | `/api/auth` (forgot password) | Forgot/reset password (`forgotPassword.routes.js`) |
-| `/api/auth` (verification) | Email verification (`verification.routes.js`) |
 | `/api/user` | Profile and user operations |
 | `/api/books` | Catalogue and book management |
 | `/api/cart` | Cart operations |

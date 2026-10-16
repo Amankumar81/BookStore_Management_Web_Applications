@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com/api/cart";
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/cart`;
 
 // Extract the full cart item list from supported API response formats.
 const getCartItems = (data) => {

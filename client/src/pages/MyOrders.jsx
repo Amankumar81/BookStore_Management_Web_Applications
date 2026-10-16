@@ -182,7 +182,7 @@ function MyOrders() {
         }
 
         const response = await fetch(
-          "https://bookstore-management-web-applications.onrender.com/api/orders/my-orders",
+          `${import.meta.env.VITE_API_URL}/api/orders/my-orders`,
           {
             method: "GET",
             headers: {

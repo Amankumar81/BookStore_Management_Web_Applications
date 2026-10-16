@@ -52,20 +52,12 @@ const userSchema = new mongoose.Schema(
     },
 
     // ============================================
-    // EMAIL VERIFICATION
+    // EMAIL STATUS
     // ============================================
 
     isVerified: {
       type: Boolean,
       default: false,
-    },
-
-    emailVerificationToken: {
-      type: String,
-    },
-
-    emailVerificationExpires: {
-      type: Date,
     },
 
     // ============================================
@@ -118,26 +110,15 @@ userSchema.pre("save", async function () {
 
   const salt = await bcrypt.genSalt(10);
 
-  this.password = await bcrypt.hash(
-    this.password,
-    salt
-  );
+  this.password = await bcrypt.hash(this.password, salt);
 });
 
 // ============================================
 // COMPARE PASSWORD
 // ============================================
 
-userSchema.methods.comparePassword = async function (
-  enteredPassword
-) {
-  return await bcrypt.compare(
-    enteredPassword,
-    this.password
-  );
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
 };
 
-module.exports = mongoose.model(
-  "User",
-  userSchema
-);
+module.exports = mongoose.model("User", userSchema);

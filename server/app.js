@@ -50,9 +50,6 @@ app.use((err, req, res, next) => {
 const forgotPasswordRoutes = require("./routes/forgotPassword.routes");
 app.use("/api/auth", forgotPasswordRoutes);
 
-const verificationRoutes = require("./routes/verification.routes");
-app.use("/api/auth", verificationRoutes);
-
 // User routes
 const userRoutes = require("./routes/user.routes");
 app.use("/api/user", userRoutes);

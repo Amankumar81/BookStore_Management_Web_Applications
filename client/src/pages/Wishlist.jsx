@@ -25,7 +25,7 @@ import {
   MenuBook,
 } from "@mui/icons-material";
 
-const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_BASE_URL =    import.meta.env.VITE_API_URL;
 
 const money = (value) => `₹${Number(value || 0).toLocaleString("en-IN")}`;
 

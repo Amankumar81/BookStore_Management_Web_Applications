@@ -46,7 +46,7 @@ import {
   CurrencyRupee,
 } from "@mui/icons-material";
 
-const API_BASE = "https://bookstore-management-web-applications.onrender.com/api/returns";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api/returns`;
 
 const STATUSES = [
   "Requested",

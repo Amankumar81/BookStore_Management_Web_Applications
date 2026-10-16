@@ -50,7 +50,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 
-const API_URL = "https://bookstore-management-web-applications.onrender.com/api";
+const API_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const RAZORPAY_SCRIPT_URL =
 

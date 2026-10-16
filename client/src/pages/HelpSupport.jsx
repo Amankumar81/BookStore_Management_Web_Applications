@@ -55,7 +55,7 @@ function HelpSupport() {
     setSubmitError(false);
 
     try {
-      const response = await fetch("https://bookstore-management-web-applications.onrender.com/api/help", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/help`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

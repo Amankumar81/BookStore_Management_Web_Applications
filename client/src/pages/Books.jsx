@@ -38,7 +38,7 @@ import { addToCart } from "../store/slices/cartSlice";
 import useRequireLogin from "../hooks/useRequireLogin";
 import usePendingAction from "../hooks/usePendingAction";
 
-const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_BASE_URL =    import.meta.env.VITE_API_URL;
 // Books per page the user can choose from
 const PAGE_SIZE_OPTIONS = [25, 50, 100];
 const DEFAULT_MAX_PRICE = 2000;

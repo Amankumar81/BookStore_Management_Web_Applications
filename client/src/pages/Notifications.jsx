@@ -33,7 +33,7 @@ import {
   FilterList,
 } from "@mui/icons-material";
 
-const API_URL = "https://bookstore-management-web-applications.onrender.com/api/notifications";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/notifications`;
 const REFRESH_INTERVAL = 15000;
 
 async function parseApiResponse(response) {

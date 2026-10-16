@@ -28,7 +28,7 @@ import { useNavigate } from "react-router-dom";
 import { setCart } from "../store/slices/cartSlice";
 import usePageTitle from "../hooks/usePageTitle";
 
-const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_BASE_URL =    import.meta.env.VITE_API_URL;
 
 // Column layout shared by the list header and every row (desktop)
 const DESKTOP_COLUMNS = "64px minmax(0,1fr) 90px 116px 96px 40px";

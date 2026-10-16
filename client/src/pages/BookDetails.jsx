@@ -31,7 +31,7 @@ import {
 
 import { getBookById } from "../api/bookApi";
 
-const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 // ============================================================
 // Helpers
@@ -403,7 +403,12 @@ function BookDetails() {
       const result = await dispatch(addToCart({ bookId: book._id, quantity }));
 
       if (addToCart.fulfilled.match(result)) {
-        toast.success(`${quantity} ${quantity === 1 ? "book" : "books"} added to cart`);
+        // Same message style as the Home page: "Book title" added to cart
+        toast.success(
+          quantity === 1
+            ? `"${book.title}" added to cart`
+            : `${quantity} copies of "${book.title}" added to cart`
+        );
         setQuantity(1);
       } else {
         throw new Error(result.payload || result.error?.message || "Failed to add book to cart");
@@ -625,6 +630,7 @@ function BookDetails() {
               <Box sx={{ display: "flex", gap: 1.5, mt: 3, flexWrap: "wrap" }}>
                 <Button
                   variant="contained"
+                  disableElevation
                   startIcon={<ShoppingCartOutlined />}
                   onClick={handleAddToCart}
                   disabled={book.stock <= 0 || addingToCart}
@@ -632,10 +638,11 @@ function BookDetails() {
                     flex: 1,
                     py: 1.2,
                     borderRadius: 2,
-                    backgroundColor: "#111827",
+                    bgcolor: "#facc15",
+                    color: "#111827",
                     textTransform: "none",
                     fontWeight: 700,
-                    "&:hover": { backgroundColor: "#000" },
+                    "&:hover": { bgcolor: "#eab308" },
                   }}
                 >
                   {addingToCart ? "Adding..." : "Add to Cart"}

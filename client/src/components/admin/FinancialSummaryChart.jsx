@@ -14,7 +14,7 @@ import {
   Tooltip,
 } from "@mui/material";
 
-const API_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_URL =    import.meta.env.VITE_API_URL;
 
 const MONTHS = [
   "January", "February", "March", "April",

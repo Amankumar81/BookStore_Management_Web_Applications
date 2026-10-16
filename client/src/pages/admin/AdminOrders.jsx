@@ -43,7 +43,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_URL =    import.meta.env.VITE_API_URL;
 const ORDERS_PER_PAGE = 10;
 const NEW_ORDER_HOURS = 24;
 const SEEN_ORDERS_STORAGE_KEY = "bookstore_admin_seen_order_ids";

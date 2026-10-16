@@ -31,7 +31,7 @@ import { addToCart } from "../store/slices/cartSlice";
 import useRequireLogin from "../hooks/useRequireLogin";
 import usePendingAction from "../hooks/usePendingAction";
 
-const API_BASE_URL = "https://bookstore-management-web-applications.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const WIDE = {
   maxWidth: 1600,
@@ -106,6 +106,7 @@ const normalizeCategory = (value) => {
 };
 
 function BookTile({ book, onAdd, adding, fluid = false }) {
+  const navigate = useNavigate();
   const [failed, setFailed] = useState(false);
 
   const src = getImageUrl(book);
@@ -134,9 +135,7 @@ function BookTile({ book, onAdd, adding, fluid = false }) {
     >
       <Box
         component="div"
-        onClick={() => {
-          window.location.href = `/books/${book._id}`;
-        }}
+        onClick={() => navigate(`/books/${book._id}`)}
         sx={{
           position: "relative",
           display: "flex",
@@ -183,9 +182,7 @@ function BookTile({ book, onAdd, adding, fluid = false }) {
       <Box sx={{ p: 1.75, display: "flex", flexDirection: "column", flex: 1 }}>
         <Typography
           component="div"
-          onClick={() => {
-            window.location.href = `/books/${book._id}`;
-          }}
+          onClick={() => navigate(`/books/${book._id}`)}
           sx={{
             display: "-webkit-box",
             WebkitLineClamp: 2,
@@ -400,13 +397,6 @@ function Home() {
     loadBooks();
   }, []);
 
-  const getBooksByCategory = (categoryName) =>
-    books.filter(
-      (book) =>
-        normalizeCategory(book.category) ===
-        normalizeCategory(categoryName)
-    );
-
   const bestSellers = [...books]
     .filter((book) => Number(book.sold || 0) > 0)
     .sort((a, b) => Number(b.sold || 0) - Number(a.sold || 0))
@@ -568,33 +558,32 @@ function Home() {
         />
       )}
 
-             {/* ALL CATEGORY BOOK SECTIONS */}
-        {CATEGORIES.map((category) => {
-           const categoryBooks = books.filter(
-             (book) =>
-               normalizeCategory(book.category) ===
-               normalizeCategory(category.name)
-           );
-         
-           if (categoryBooks.length === 0) {
-             return null;
-           }
-         
-           return (
-             <Shelf
-               key={category.name}
-               title={`${category.name} Books`}
-               subtitle={`Explore our ${category.name.toLowerCase()} collection.`}
-               to={`/books?category=${encodeURIComponent(category.name)}`}
-               loading={loading}
-               books={categoryBooks}
-               onAdd={handleAddToCart}
-               addingId={addingId}
-             />
-           );
-         })}
+      {/* ALL CATEGORY BOOK SECTIONS */}
+      {CATEGORIES.map((category) => {
+        const categoryBooks = books.filter(
+          (book) =>
+            normalizeCategory(book.category) ===
+            normalizeCategory(category.name)
+        );
 
-         
+        if (categoryBooks.length === 0) {
+          return null;
+        }
+
+        return (
+          <Shelf
+            key={category.name}
+            title={`${category.name} Books`}
+            subtitle={`Explore our ${category.name.toLowerCase()} collection.`}
+            to={`/books?category=${encodeURIComponent(category.name)}`}
+            loading={loading}
+            books={categoryBooks}
+            onAdd={handleAddToCart}
+            addingId={addingId}
+          />
+        );
+      })}
+
       {/* MAIN CTA */}
       <Box sx={{ ...WIDE, py: { xs: 6, md: 9 } }}>
         <Box

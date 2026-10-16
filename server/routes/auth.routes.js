@@ -13,50 +13,18 @@ const {
 
 const {
   register,
-  verifyEmail,
   login,
 } = require("../controllers/auth.controller");
 
-// ==============================
-// Register
-// ==============================
-router.post(
-  "/register",
-  validate(registerSchema),
-  register
-);
+router.post("/register", validate(registerSchema), register);
 
-// ==============================
-// Verify Email
-// ==============================
+router.post("/login", validate(loginSchema), login);
 
-router.get(
-  "/verify-email/:token",
-  verifyEmail
-);
-
-// ==============================
-// Login
-// ==============================
-router.post(
-  "/login",
-  validate(loginSchema),
-  login
-);
-
-// ==============================
-// Admin Route
-// ==============================
-router.get(
-  "/admin",
-  protect,
-  authorize("admin"),
-  (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: "Welcome Admin",
-    });
-  }
-);
+router.get("/admin", protect, authorize("admin"), (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Welcome Admin",
+  });
+});
 
 module.exports = router;
